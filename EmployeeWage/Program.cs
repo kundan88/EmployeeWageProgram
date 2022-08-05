@@ -6,8 +6,10 @@ namespace EmployeeWage
     {
         public static void Main(string[] args)
         {
-            EmployeeWage empWage = new EmployeeWage();
-            empWage.EmpLoyee();
+            Console.WriteLine("Welcome to Employee Wage Computation!");
+            Console.WriteLine();
+            EmployeeWageComputaion wage = new EmployeeWageComputaion(20, 8, 4, 20, 100);
+            wage.CalculateWage();
         }
     }
 }
