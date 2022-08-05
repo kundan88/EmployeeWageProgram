@@ -8,20 +8,30 @@ namespace EmployeeWage
 {
     public class EmployeeWage
     {
-        public void EmployeeCheckAttendance()
+        public void CalDailyEmployeeWage()
         {
-            int is_Full_Time = 1;
-            Random random = new Random();
-            int employeeCheck = new Random().Next(2);
+            int empRatePrHr = 20;
+            int empHr;
+            int empWage;
+            int isPresent = 1;
 
-            if (employeeCheck == is_Full_Time)
+            int employeeStatus = new Random().Next(2);
+            Random random = new Random();
+
+            if (employeeStatus == isPresent)
             {
                 Console.WriteLine("Employee is Present");
+                empHr = 8;
             }
             else
             {
                 Console.WriteLine("Employee is Absent");
+                empHr = 0;
             }
+
+            empWage = empRatePrHr * empHr;
+            Console.WriteLine("Employees daily wage is " + empWage);
         }
     }
+
 }
