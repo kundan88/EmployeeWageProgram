@@ -8,11 +8,20 @@ namespace EmployeeWage
 {
     public class EmployeeWage
     {
-        public void EmpLoyee() 
+        public void EmployeeCheckAttendance()
         {
-            Console.WriteLine("Welcome to Employee Wage Computation");
-           
-        }
+            int is_Full_Time = 1;
+            Random random = new Random();
+            int employeeCheck = new Random().Next(2);
 
+            if (employeeCheck == is_Full_Time)
+            {
+                Console.WriteLine("Employee is Present");
+            }
+            else
+            {
+                Console.WriteLine("Employee is Absent");
+            }
+        }
     }
 }
