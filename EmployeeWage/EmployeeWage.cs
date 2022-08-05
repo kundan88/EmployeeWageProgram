@@ -8,40 +8,33 @@ namespace EmployeeWage
 {
     public class EmployeeWage
     {
-        public void PartTimeEmployeeWage()
+        public const int empRatePrHr = 20;
+        public const int isFullTime = 2;
+        public const int isPartTime = 1;
+
+        public void EmpWageUsingSwitchCase()
         {
-            int wrkHr;
-            int empRatePrHr = 20;
-            int empWage;
-            int isFullTime = 1;
-            int isPresent = 1;
 
-            int employeeStatus = new Random().Next(0, 2);
-            int empTime = new Random().Next(0, 2);
+            int workHr;
+            int totalWage;
 
-            if (employeeStatus == isPresent)
+            int employeeStatus = new Random().Next(2);
+
+            switch (employeeStatus)
             {
-                if (empTime == isFullTime)
-                {
-                    Console.WriteLine("Employee is Present");
-                    wrkHr = 8;
-
-                }
-                else
-                {
-                    Console.WriteLine("Employe is Present");
-                    wrkHr = 4;
-                }
+                case isFullTime:
+                    workHr = 8;
+                    break;
+                case isPartTime:
+                    workHr = 4;
+                    break;
+                default:
+                    workHr = 0;
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                wrkHr = 0;
-            }
-
-            empWage = wrkHr * empRatePrHr;
-            Console.WriteLine("Employee wage is " + empWage);
+            totalWage = empRatePrHr * workHr;
+            Console.WriteLine("Employee total wage is " + totalWage);
         }
-
     }
 }
+
