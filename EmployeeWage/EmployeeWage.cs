@@ -12,12 +12,15 @@ namespace EmployeeWage
         public const int isFullTime = 1;
         public const int isPartTime = 2;
         public const int numOfDays = 20;
-        public void EmpWageForMonth()
+        public const int maxHrs = 100;
+        public void EmpWageForTillCondition()
         {
             int workHr;
-            int empWage;
-            int totalWage = 0;
-            for (int days = 0; days < numOfDays; days++)
+            int totalWrkHr = 0;
+            int totalWage;
+            int totalWrkDays = 0;
+
+            while (totalWrkHr < maxHrs && totalWrkDays < numOfDays)
             {
                 int employeeStatus = new Random().Next(2);
                 switch (employeeStatus)
@@ -32,10 +35,12 @@ namespace EmployeeWage
                         workHr = 0;
                         break;
                 }
-                empWage = empRatePrHr * workHr;
-                totalWage += empWage;
+                totalWrkHr += workHr;
+                totalWrkDays++;
             }
-            Console.WriteLine("Employee total wage is " + totalWage);
+            totalWage = totalWrkHr * empRatePrHr;
+            Console.WriteLine("Employee total wage is " + totalWage
+                + " for {0} working Days", totalWrkDays);
         }
     }
 }
