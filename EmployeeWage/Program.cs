@@ -12,7 +12,10 @@ public class Program
         empWageComputation.CalculateEmpWage("mahindra");
         empWageComputation.AddCompany("Tesla", 60, 8, 7, 10, 200);
         empWageComputation.CalculateEmpWage("tesla");
-        empWageComputation.ViewEmpWage();
+
+        Console.WriteLine("Enter the Company name");
+        string company = Convert.ToString(Console.ReadLine());
+        empWageComputation.func(company);
 
     }
 }
